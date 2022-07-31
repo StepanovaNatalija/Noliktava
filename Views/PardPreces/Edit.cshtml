@@ -1,0 +1,44 @@
+﻿@model Noliktava.Models.PardPrece
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PardPrece</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="PrecKods" class="control-label"></label>
+                <input asp-for="PrecKods" class="form-control" />
+                <span asp-validation-for="PrecKods" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Datums" class="control-label"></label>
+                <input asp-for="Datums" class="form-control" />
+                <span asp-validation-for="Datums" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Skaits" class="control-label"></label>
+                <input asp-for="Skaits" class="form-control" />
+                <span asp-validation-for="Skaits" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

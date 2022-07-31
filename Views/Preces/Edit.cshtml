@@ -1,0 +1,54 @@
+﻿@model Noliktava.Models.Prece
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Prece</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="PrecKods" class="control-label"></label>
+                <input asp-for="PrecKods" class="form-control" />
+                <span asp-validation-for="PrecKods" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nosaukums" class="control-label"></label>
+                <input asp-for="Nosaukums" class="form-control" />
+                <span asp-validation-for="Nosaukums" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PiegKods" class="control-label"></label>
+                <input asp-for="PiegKods" class="form-control" />
+                <span asp-validation-for="PiegKods" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Daudzums" class="control-label"></label>
+                <input asp-for="Daudzums" class="form-control" />
+                <span asp-validation-for="Daudzums" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cena" class="control-label"></label>
+                <input asp-for="Cena" class="form-control" />
+                <span asp-validation-for="Cena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
